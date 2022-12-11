@@ -1,0 +1,22 @@
+.container {
+    width: 70%;
+    height: 40px;
+    line-height: 140px;
+    display: grid;
+    line-height: 40px;
+    grid-template-columns: 40px 1fr;
+    border-radius: 25px;
+    transition: 0.5s;
+    position: relative;
+}
+
+.icon {
+    margin: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.container:hover {
+    background-color: rgb(231, 231, 231);
+    transform: translateX(10px);
+}

@@ -1,0 +1,21 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 5px;
+    padding-left: 20px;
+    line-height: 100px;
+    box-shadow: 0 0 15px black;
+}
+
+.icon {
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+}
+
+.inp {
+    width: 400px;
+    height: 40px;
+    border: none;
+    box-shadow: 0 0 3px black;
+}

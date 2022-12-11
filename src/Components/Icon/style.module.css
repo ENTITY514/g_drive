@@ -1,0 +1,12 @@
+.container {
+    width: inherit;
+    height: inherit;
+}
+
+.image {
+    width: inherit;
+    height: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
