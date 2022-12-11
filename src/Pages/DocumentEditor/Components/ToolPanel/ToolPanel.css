@@ -4,6 +4,9 @@
   align-items: center;
   margin-left: -5px;
   margin-right: -5px;
+  background-color: #fff;
+  border: none;
+  font-size: large;
 }
 
 .tool-panel__item {
@@ -14,6 +17,9 @@
   margin-right: -5px;
   flex-shrink: 0;
   margin: 0 5px 10px;
+  background-color: #fff;
+  border: none;
+  font-size: large;
 }
 
 .tool-panel__item_active {
@@ -25,4 +31,7 @@
   flex-shrink: 0;
   margin: 0 5px 10px;
   color: red;
+  background-color: #fff;
+  border: none;
+  font-size: large;
 }

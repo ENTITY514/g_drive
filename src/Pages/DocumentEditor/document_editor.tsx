@@ -6,14 +6,13 @@ import style from "./style.module.css"
 
 export const DocumentEditor = () => {
     return (
-        <div className={style.container}>
-            <Header />
-            <div className={style.box}>
-                <TextEditorProvider >
-                    <ToolPanel />
+        <TextEditorProvider >
+            <div className={style.container}>
+                <Header />
+                <div className={style.box}>
                     <TextEditor />
-                </TextEditorProvider>
+                </div>
             </div>
-        </div>
+        </TextEditorProvider>
     )
 }

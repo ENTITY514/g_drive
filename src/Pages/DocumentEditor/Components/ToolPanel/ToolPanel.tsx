@@ -1,9 +1,12 @@
+import { cryptico, RSAKey } from "@daotl/cryptico";
 import * as React from "react";
+import { useAppSelector } from "../../../../Store/hooks/redux";
 import { useEditorApi } from "../TextEditor";
 import { BlockType, InlineStyle } from "../TextEditor/config";
 import "./ToolPanel.css";
 
 const ToolPanel: React.FC = () => {
+  const state = useAppSelector(state => state.UserSlice)
   const {
     toHtml,
     addLink,
@@ -66,7 +69,7 @@ const ToolPanel: React.FC = () => {
       ))}
 
       <button
-        className={currentBlockType === BlockType.h1 ? "tool-panel__item_active" : "tool-panel__item"}
+        className={"tool-panel__item"}
         onClick={() => {
           const url = prompt("URL:");
           if (url) {
@@ -78,12 +81,25 @@ const ToolPanel: React.FC = () => {
       </button>
 
       <button
-        className={currentBlockType === BlockType.h1 ? "tool-panel__item_active" : "tool-panel__item"}
+        className={"tool-panel__item"}
         onClick={() => {
-          console.log(toHtml());
+          var documents = localStorage.getItem("documents")
+          if (documents !== null) {
+            var array = JSON.parse(documents)
+            const key: RSAKey = cryptico.generateRSAKey("iman", 1024)
+            var MattsPublicKeyString = cryptico.publicKeyString(key);
+            var EncryptionName = cryptico.encrypt(state.name, MattsPublicKeyString, key) as { status: string, cipher: string }
+            var EncryptionRData = cryptico.encrypt(toHtml(), MattsPublicKeyString, key) as { status: string, cipher: string }
+            array.push({
+              name: EncryptionName.cipher,
+              data: EncryptionRData.cipher
+            })
+            localStorage.setItem("documents", JSON.stringify(array))
+          }
+
         }}
       >
-        Print
+        Save
       </button>
     </div>
   );

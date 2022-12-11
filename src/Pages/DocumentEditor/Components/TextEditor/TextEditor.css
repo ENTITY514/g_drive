@@ -1,9 +1,9 @@
 .text-editor {
-  border: 1px solid black;
+  box-shadow: 0 0 15px rgb(184, 184, 184);
   padding: 15px;
   cursor: pointer;
 }
 
 .public-DraftEditor-content {
-  min-height: 100px;
+  min-height: 1000px;
 }

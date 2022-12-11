@@ -1,18 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IUser } from "../models/User";
+import { Files } from "../models/Files";
 
-const initialState: IUser = {
-    name: "user",
-    is_auth: false
+const initialState: Files = {
+    name: "",
+    data: ""
 }
 
 export const FileSlice = createSlice({
     name: 'file',
     initialState,
     reducers: {
-        create: () => {
-
-        }
     }
 })
 

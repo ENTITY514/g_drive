@@ -5,7 +5,7 @@ import UserSlice from "./reducers/user_slice";
 
 const rootReducers = combineReducers({
     SettingsSlice,
-    UserSlice
+    UserSlice,
 })
 
 export const setupStore = () => {

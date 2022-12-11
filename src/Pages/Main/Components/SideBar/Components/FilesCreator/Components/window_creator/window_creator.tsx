@@ -2,12 +2,16 @@ import React from 'react';
 import { Item } from '../Item/item';
 import style from "./window_creator.module.css"
 import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from '../../../../../../../../Store/hooks/redux';
+import { set_name } from '../../../../../../../../Store/reducers/user_slice';
 
 
 
 export const WindowCreator: React.FC = () => {
+    const dispatch = useAppDispatch()
     const navigate = useNavigate()
     const create_document = () => {
+        dispatch(set_name("Документ без названия"))
         navigate("/document_editor")
     }
     return (

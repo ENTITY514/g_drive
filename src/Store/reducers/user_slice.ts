@@ -2,21 +2,21 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IUser } from "../models/User";
 
 const initialState: IUser = {
-    name: "user",
-    is_auth: false
+    name: "",
+    data: ""
 }
 
 export const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        auth_in(state){
-            state.is_auth = true
+        set_name: (state, action) => {
+            state.name = action.payload
         },
-        auth_out(state){
-            state.is_auth = false
+        set_data: (state, action) => {
+            state.data = action.payload
         }
     }
 })
-
+export const { set_name, set_data } = userSlice.actions
 export default userSlice.reducer;

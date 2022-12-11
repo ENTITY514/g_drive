@@ -12,6 +12,9 @@ import { IUser } from './Store/models/User';
 
 function App() {
   const state: IUser = useAppSelector(state => state.UserSlice)
+  if (localStorage.getItem("documents") === null) {
+    localStorage.setItem("documents", JSON.stringify([]))
+  }
   return (
     <BrowserRouter>
       <div className="App">

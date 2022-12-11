@@ -2,9 +2,17 @@
     width: 100vw;
     min-height: 100vh;
     display: grid;
+    grid-template-rows: 150px 1fr;
+    grid-row-gap: 50px;
 }
 
-.box{
-    width: 90%;
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.box {
+    width: 80%;
+    padding: 10px;
     margin: 0 auto;
 }
