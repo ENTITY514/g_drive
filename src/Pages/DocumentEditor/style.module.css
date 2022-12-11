@@ -1,0 +1,10 @@
+.container {
+    width: 100vw;
+    min-height: 100vh;
+    display: grid;
+}
+
+.box{
+    width: 90%;
+    margin: 0 auto;
+}

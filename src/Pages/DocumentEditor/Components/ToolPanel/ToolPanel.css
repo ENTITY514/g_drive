@@ -1,0 +1,28 @@
+.tool-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: -5px;
+  margin-right: -5px;
+}
+
+.tool-panel__item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: -5px;
+  margin-right: -5px;
+  flex-shrink: 0;
+  margin: 0 5px 10px;
+}
+
+.tool-panel__item_active {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: -5px;
+  margin-right: -5px;
+  flex-shrink: 0;
+  margin: 0 5px 10px;
+  color: red;
+}
