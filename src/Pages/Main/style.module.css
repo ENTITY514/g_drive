@@ -2,5 +2,15 @@
     width: 100vw;
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 120px 1fr;
+}
+
+.box{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+}
+
+.main{
+    box-shadow: inset 15px 15px 15px rgb(187, 187, 187);
 }

@@ -18,5 +18,25 @@
 
 .container:hover {
     background-color: rgb(231, 231, 231);
-    transform: translateX(10px);
+}
+
+.bg {
+    position: absolute;
+    background-color: rgba(3, 3, 3, 0.2);
+    width: 100vw;
+    height: 100vh;
+    top: -135px;
+    left: -20px;
+    z-index: 9;
+    animation: open 0.2s ease-in;
+}
+
+@keyframes open {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }

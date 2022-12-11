@@ -6,11 +6,13 @@ import style from "./style.module.css"
 export const Main = () => {
     return (
         <div className={style.container}>
-            <div className={style.sidebar}>
-                <SideBar />
-            </div>
-            <div className={style.main}>
-                <Header />
+            <Header />
+            <div className={style.box}>
+                <div className={style.sidebar}>
+                    <SideBar />
+                </div>
+                <div className={style.main}>
+                </div>
             </div>
         </div>
     );
