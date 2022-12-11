@@ -7,16 +7,18 @@ export const AuthPage = () => {
     const [is_registr, set_is_registration] = React.useState(true)
     return (
         <div className={style.container}>
-            <div className={style.choose}>
-                <div className={is_registr ? style.choose_active : style.choose_unactive} onClick={() => { set_is_registration(true) }}>Регистрация</div>
-                <div className={is_registr ? style.choose_active : style.choose_unactive} onClick={() => { set_is_registration(false) }}>Вход</div>
+            <div className={style.box}>
+                <div className={style.choose}>
+                    <div className={is_registr ? style.choose_active : style.choose_unactive} onClick={() => { set_is_registration(true) }}>Регистрация</div>
+                    <div className={is_registr ? style.choose_unactive : style.choose_active} onClick={() => { set_is_registration(false) }}>Вход</div>
+                </div>
+                {
+                    is_registr ?
+                        <Registration />
+                        :
+                        <Auth />
+                }
             </div>
-            {
-                is_registr ?
-                    <Registration />
-                    :
-                    <Auth />
-            }
         </div>
     );
 }
