@@ -6,7 +6,6 @@ import { useEditorApi } from "./context";
 
 const TextEditor: React.FC = () => {
   const editorApi = useEditorApi();
-
   return (
     <div className={"text-editor"}>
       <Editor

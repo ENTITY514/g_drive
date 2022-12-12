@@ -16,6 +16,10 @@ const ToolPanel: React.FC = () => {
     hasInlineStyle,
   } = useEditorApi();
 
+  function nonoid() {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <div className="tool-panel">
       <button
@@ -92,7 +96,8 @@ const ToolPanel: React.FC = () => {
             var EncryptionRData = cryptico.encrypt(toHtml(), MattsPublicKeyString, key) as { status: string, cipher: string }
             array.push({
               name: EncryptionName.cipher,
-              data: EncryptionRData.cipher
+              data: EncryptionRData.cipher,
+              id: nonoid()
             })
             localStorage.setItem("documents", JSON.stringify(array))
           }

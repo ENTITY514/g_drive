@@ -13,6 +13,9 @@ export const Header: React.FC = () => {
             <h1 className={style.name}>Диск</h1>
             <div className={style.search}>
                 <input type="text" className={style.inp} ref={inp_ref} />
+                <div className={style.icon_wrap}>
+                    <Icon url="/icons/search.png"/>
+                </div>
             </div>
         </div>
     );

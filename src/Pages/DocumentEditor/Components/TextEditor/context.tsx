@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useAppSelector } from "../../../../Store/hooks/redux";
 import { EditorApi, useEditor } from "./useEditor";
 
 const TextEditorContext = React.createContext<EditorApi | undefined>(undefined);
@@ -8,8 +9,8 @@ interface props {
 }
 
 export const TextEditorProvider: React.FC<props> = ({ children }) => {
-  const editorApi = useEditor();
-
+  const state = useAppSelector(state => state.UserSlice)
+  let editorApi = useEditor(state.data !== "" ? state.data : undefined)
   return (
     <TextEditorContext.Provider value={editorApi}>
       {children}
