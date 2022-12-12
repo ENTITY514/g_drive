@@ -3,7 +3,8 @@ import { Item } from '../Item/item';
 import style from "./window_creator.module.css"
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from '../../../../../../../../Store/hooks/redux';
-import { set_data, set_name } from '../../../../../../../../Store/reducers/user_slice';
+import { set_data, set_id, set_name } from '../../../../../../../../Store/reducers/user_slice';
+import { nanoid } from 'nanoid';
 
 
 
@@ -13,6 +14,7 @@ export const WindowCreator: React.FC = () => {
     const create_document = () => {
         dispatch(set_name("Документ без названия"))
         dispatch(set_data(""))
+        dispatch(set_id(nanoid()))
         navigate("/document_editor")
     }
     return (

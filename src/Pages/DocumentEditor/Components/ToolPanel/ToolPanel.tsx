@@ -88,17 +88,22 @@ const ToolPanel: React.FC = () => {
         className={"tool-panel__item"}
         onClick={() => {
           var documents = localStorage.getItem("documents")
+          var find = false
           if (documents !== null) {
             var array = JSON.parse(documents)
             const key: RSAKey = cryptico.generateRSAKey("iman", 1024)
             var MattsPublicKeyString = cryptico.publicKeyString(key);
             var EncryptionName = cryptico.encrypt(state.name, MattsPublicKeyString, key) as { status: string, cipher: string }
             var EncryptionRData = cryptico.encrypt(toHtml(), MattsPublicKeyString, key) as { status: string, cipher: string }
-            array.push({
-              name: EncryptionName.cipher,
-              data: EncryptionRData.cipher,
-              id: nonoid()
-            })
+            array.forEach((element: { data: string, id: string }) => {
+              if (element.id === state.id) {
+                find = true
+                element.data = EncryptionRData.cipher
+              }
+            });
+            if (!find) {
+              array.push({ name: EncryptionName.cipher, data: EncryptionRData.cipher, id: state.id })
+            }
             localStorage.setItem("documents", JSON.stringify(array))
           }
 
@@ -106,7 +111,7 @@ const ToolPanel: React.FC = () => {
       >
         Save
       </button>
-    </div>
+    </div >
   );
 };
 
